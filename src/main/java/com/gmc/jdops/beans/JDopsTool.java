@@ -1,10 +1,8 @@
 package com.gmc.jdops.beans;
 
-import org.springframework.data.annotation.Id;
 import java.io.Serializable;
 
 public class JDopsTool implements Serializable{
-  @Id
   public String id;
   public String name;
   public String purpose;
