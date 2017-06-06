@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+    }
+}
+plugins {
+  id "org.sonarqube" version "2.4"
+}
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+def cucumberVersion = "1.2.4"
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.code.findbugs:jsr305:3.0.2'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE'
+    compile 'org.codehaus.groovy:groovy-all:2.3.7'
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    compile("io.springfox:springfox-swagger2:2.3.1")
+    compile("io.springfox:springfox-swagger-ui:2.3.1")
+    compile 'io.swagger:swagger-annotations:1.5.7'
+
+    compile 'joda-time:joda-time:2.9.2'
+    compile 'org.trimou:trimou-core:1.8.0.Final'
+
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
+
+jar {
+    baseName = 'java-devops-demo'
+    version = '0.1.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
+
+test {
+    ignoreFailures = true
+}
