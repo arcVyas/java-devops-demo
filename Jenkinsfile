@@ -8,10 +8,10 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh './gradlew clean build'
+        sh './gradlew clean build '
       }
     }
-    stage('Test') {
+    stage('Publish Test Reports') {
       steps {
         junit 'build/test-results/test/*.xml'
       }
