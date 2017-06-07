@@ -41,6 +41,11 @@ pipeline {
         
       }
     }
+    stage('Publish Artifacts') {
+      steps {
+        sh './gradlew publish '
+      }
+    }
     stage('Ask Approval') {
       steps {
         slackSend 'Woohoo.. Ready for deployment '
