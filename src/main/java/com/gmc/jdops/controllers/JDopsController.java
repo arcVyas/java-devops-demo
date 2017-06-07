@@ -21,6 +21,8 @@ class JDopsController {
       jDopsToolList.add(new JDopsTool("1","Jira","Collaboration","",true));
       jDopsToolList.add(new JDopsTool("2","Bamboo","CI","",true));
       jDopsToolList.add(new JDopsTool("3","Jenkins","CI","",false));
+      jDopsToolList.add(new JDopsTool("4","BitBucket","SCM","",false));
+
       return jDopsToolList;
     }
 

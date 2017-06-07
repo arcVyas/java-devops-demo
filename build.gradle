@@ -14,13 +14,11 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'war'
-def cucumberVersion = "1.2.4"
+apply plugin: 'maven-publish'
 
-configurations {
-    cucumberRuntime {
-        extendsFrom testRuntime
-    }
-}
+group = 'devops-demo'
+version = '1.0'
+
 
 repositories {
     mavenCentral()
@@ -42,11 +40,30 @@ dependencies {
 
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
-
-jar {
+war {
     baseName = 'java-devops-demo'
-    version = '0.1.0'
+    version =  '1.0'
 }
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.web
+        }
+    }
+}
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "${artifactory_user}"
+                password "${artifactory_password}"
+            }
+            url "${artifactory_contextUrl}/${artifactory_repo}"
+        }
+    }
+}
+
+
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
