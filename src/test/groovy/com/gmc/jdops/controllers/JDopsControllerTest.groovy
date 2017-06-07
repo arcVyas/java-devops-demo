@@ -1,6 +1,6 @@
 package com.gmc.jdops.controllers
 
-import com.gmc.jdops.controllers.JdopsController
+import com.gmc.jdops.controllers.JDopsController
 import spock.lang.Specification
 
 /**
