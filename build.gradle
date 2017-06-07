@@ -47,7 +47,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId 'devops-demo'
             artifactId 'java-devops-demo'
-            version '1.1'
+            version '1.2'
             from components.web
         }
     }
