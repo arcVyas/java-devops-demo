@@ -56,8 +56,9 @@ pipeline {
       steps {
         sh '''export ANSIBLE_HOME=/Users/vyas/workspace/tools/ansible
 cd $ANSIBLE_HOME
-ansible-playbook -i hosts -v tc.yml
-cd -'''
+pwd
+cd -
+pwd'''
       }
     }
   }
