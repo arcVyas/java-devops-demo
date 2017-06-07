@@ -16,8 +16,6 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 apply plugin: 'maven-publish'
 
-group = 'devops-demo'
-version = '1.0'
 
 
 repositories {
@@ -47,6 +45,9 @@ war {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId 'devops-demo'
+            artifactId 'java-devops-demo'
+            version '1.1'
             from components.web
         }
     }
