@@ -57,7 +57,7 @@ pipeline {
         sh '''export ANSIBLE_HOME=/Users/vyas/workspace/tools/ansible
 cd $ANSIBLE_HOME
 '''
-        ansiblePlaybook(playbook: '/Users/vyas/workspace/tools/ansible/tc.yml', inventory: '/Users/vyas/workspace/tools/ansible/hosts')
+        ansiblePlaybook(playbook: '/Users/vyas/workspace/tools/ansible/tc.yml', inventory: '/Users/vyas/workspace/tools/ansible/hosts', sudo: true)
       }
     }
   }
