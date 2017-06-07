@@ -59,7 +59,7 @@ cd $ANSIBLE_HOME
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.5/bin
 echo $PATH
 which ansible-playbook
-ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts -s -U root
+ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts
 '''
       }
     }
