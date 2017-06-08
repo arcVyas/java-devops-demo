@@ -8,16 +8,18 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh './gradlew clean build '
+        sh './gradlew clean build -x test'
       }
     }
-    stage('Publish Test Reports') {
+    stage('Test') {
       steps {
+        sh './gradlew test'
         junit 'build/test-results/test/*.xml'
       }
     }
     stage('Quality Check') {
       steps {
+        sh './gradlew jacocoTestReport'
         script {
           withSonarQubeEnv('SonarQube') {
             sh './gradlew --info sonarqube'
