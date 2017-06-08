@@ -15,11 +15,11 @@ pipeline {
       steps {
         sh './gradlew test'
         junit 'build/test-results/test/*.xml'
+        sh './gradlew jacocoTestReport'
       }
     }
     stage('Quality Check') {
       steps {
-        sh './gradlew jacocoTestReport'
         script {
           withSonarQubeEnv('SonarQube') {
             sh './gradlew sonarqube'
