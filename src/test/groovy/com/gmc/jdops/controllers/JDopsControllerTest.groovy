@@ -14,8 +14,10 @@ class JdopsControllerTest extends Specification {
     }
 
     def "JDopsToolList - Validate Approved List"() {
+        def jDops = new JDopsController()
+        List toolList = jDops.getJDopsTools()
         expect:
-            1==1
+            toolList.size() == 5
     }
 
     def "JDopsToolList - Make sure tool name and purpose is not BLANK"() {
