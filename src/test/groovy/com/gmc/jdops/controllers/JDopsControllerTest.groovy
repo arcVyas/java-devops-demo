@@ -13,16 +13,31 @@ class JdopsControllerTest extends Specification {
         
     }
 
-    def "JDopsToolList - Validate Approved List"() {
+    def "JDopsToolList - Validate Approved List Count"() {
         def jDops = new JDopsController()
         List toolList = jDops.getJDopsTools()
         expect:
-            toolList.size() == 5
+            toolList.size() > 0
     }
 
-    def "JDopsToolList - Make sure tool name and purpose is not BLANK"() {
+    def "JDopsToolList - Validate Approved List Status"() {
+        setup:
+        def jDops = new JDopsController()
+
+        when:
+        List toolList = jDops.getJDopsTools()
+
+        then:
+            toolList.each { tool ->
+                if(!tool.name.contains("Jenkins")) {
+                    assert tool.isApproved : "${tool.name} approval status is ${tool.isApproved}. It should have been approved"
+                }
+            }
+    }
+
+    def "App version should be >= 1.0"() {
         expect:
-            1==1
+            Float.parseFloat(new JDopsController().getVersion()) >= 1.0
     }
 
    

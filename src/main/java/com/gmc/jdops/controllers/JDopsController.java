@@ -23,6 +23,7 @@ class JDopsController {
       jDopsToolList.add(new JDopsTool("3","Jenkins","CI","",false));
       jDopsToolList.add(new JDopsTool("4","BitBucket","SCM","",true));
       jDopsToolList.add(new JDopsTool("5","SonarQube","CodeAnalysis","",false));
+      jDopsToolList.add(new JDopsTool("6","Gradle","Build Tool","",false));
       return jDopsToolList;
     }
 
