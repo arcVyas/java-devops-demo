@@ -22,10 +22,9 @@ pipeline {
         sh './gradlew jacocoTestReport'
         script {
           withSonarQubeEnv('SonarQube') {
-            sh './gradlew --info sonarqube'
+            sh './gradlew sonarqube'
           }
         }
-        
       }
     }
     stage('Quality Gate') {

@@ -48,7 +48,6 @@ jacocoTestReport {
     }
 }
 
-
 war {
     baseName = 'java-devops-demo'
     version =  '1.0'
