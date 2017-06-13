@@ -58,8 +58,14 @@ class JdopsControllerTest extends Specification {
     }
 
     def "Test test method"(){
-        expect:
-            1 == 1
+        setup:
+        def jDops = new JDopsController()
+
+        when:
+        jDops.testMethod()
+
+        then:
+            1==1
     }
     
 
