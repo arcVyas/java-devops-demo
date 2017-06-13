@@ -62,10 +62,10 @@ class JdopsControllerTest extends Specification {
         def jDops = new JDopsController()
 
         when:
-        jDops.testMethod()
+        String tool=jDops.testMethod()
 
         then:
-            1==1
+            tool == "test"
     }
     
 

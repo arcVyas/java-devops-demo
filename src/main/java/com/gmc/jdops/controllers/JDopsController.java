@@ -45,8 +45,9 @@ class JDopsController {
       return "1.0";
     }
 
-    public void testMethod(){
+    public String testMethod(){
      String tool = "test";
+     return tool;
     }
 
 }
