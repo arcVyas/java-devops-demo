@@ -35,6 +35,40 @@ class JdopsControllerTest extends Specification {
             }
     }
 
+    def "JDopsToolList - Validate tool creation"() {
+        setup:
+        def jDops = new JDopsController()
+
+        when:
+        String status = jDops.createJDopsTool(null)
+
+        then:
+            status == "200"
+    }
+
+    def "JDopsToolList - Validate tool deletion"() {
+        setup:
+        def jDops = new JDopsController()
+
+        when:
+        String status = jDops.deleteJDopsTool(null)
+
+        then:
+            status == "200"
+    }
+
+    def "Test test method"(){
+        setup:
+        def jDops = new JDopsController()
+
+        when:
+        String tool=jDops.testMethod()
+
+        then:
+            tool == "test"
+    }
+    
+
     def "App version should be >= 1.0"() {
         expect:
             Float.parseFloat(new JDopsController().getVersion()) >= 1.0
