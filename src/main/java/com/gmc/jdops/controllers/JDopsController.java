@@ -27,6 +27,18 @@ class JDopsController {
       return jDopsToolList;
     }
 
+    @ApiOperation(value = "Create JDops Tool", response=String.class)
+    @RequestMapping(value = "/tools", method=RequestMethod.POST, consumes="application/json")
+    public String createJDopsTool(@ApiParam(name="jDopsTool", value="JDops Json", required=true) @RequestBody JDopsTool jDopsTool) {
+     return "200";
+    }
+
+    @ApiOperation(value = "Delete JDops Tool", response=String.class)
+    @RequestMapping(value = "/tools/{id}", method=RequestMethod.DELETE)
+    public String deleteCoupon(@ApiParam(name="toolId", value="Tool ID", required=true) @PathVariable String toolId) {
+     return "200";
+    }
+
     @ApiOperation(value = "Get API version", response=String.class, responseContainer="String")
     @RequestMapping(value = "/version", produces = "application/json", method=RequestMethod.GET)
     public String getVersion() {
