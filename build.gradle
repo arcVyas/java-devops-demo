@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 apply plugin: 'maven-publish'
 apply plugin: 'jacoco'
-
+apply plugin: 'maven'
 
 repositories {
     mavenCentral()
@@ -38,7 +38,6 @@ dependencies {
 
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
-
 
 jacocoTestReport {
     reports {
@@ -73,8 +72,6 @@ publishing {
         }
     }
 }
-
-
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
