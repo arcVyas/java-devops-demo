@@ -51,10 +51,4 @@ class JDopsController {
       System.out.println("This is simply to increase code coverage - two more");
     }
 
-    public void testMethod2(){
-      System.out.println("This is simply to increase code coverage 2");
-      System.out.println("This is simply to increase code coverage 2 - one more");
-      System.out.println("This is simply to increase code coverage 2- two more");
-    }
-
 }
