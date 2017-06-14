@@ -50,4 +50,9 @@ class JDopsController {
      return tool;
     }
 
+    public String testMethodToMakeSonarFail(){
+     String tool = "testFailure";
+     return tool;
+    }
+
 }
