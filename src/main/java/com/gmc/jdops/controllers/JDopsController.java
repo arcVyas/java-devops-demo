@@ -18,7 +18,7 @@ class JDopsController {
     @RequestMapping(value = "/tools", produces = "application/json", method=RequestMethod.GET)
     public List<JDopsTool> getJDopsTools() {
       List jDopsToolList = new ArrayList<JDopsTool>();
-      jDopsToolList.add(new JDopsTool("1","Jira","Collaboration","",true));
+      jDopsToolList.add(new JDopsTool("1","Jira","Collaboration","Jira will be primarily used for planning and tracking",true));
       jDopsToolList.add(new JDopsTool("2","Bamboo","CI","",true));
       jDopsToolList.add(new JDopsTool("3","Jenkins","CI","",false));
       jDopsToolList.add(new JDopsTool("4","BitBucket","SCM","",true));
