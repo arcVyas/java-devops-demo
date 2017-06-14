@@ -23,7 +23,7 @@ class JDopsController {
       jDopsToolList.add(new JDopsTool("3","Jenkins","CI","",false));
       jDopsToolList.add(new JDopsTool("4","BitBucket","SCM","",true));
       jDopsToolList.add(new JDopsTool("5","SonarQube","CodeAnalysis","",true));
-      jDopsToolList.add(new JDopsTool("6","Gradle","Build Tool","",true));
+      jDopsToolList.add(new JDopsTool("6","Maven","Build Tool","",true));
       return jDopsToolList;
     }
 
@@ -47,11 +47,6 @@ class JDopsController {
 
     public String testMethod(){
      String tool = "test";
-     return tool;
-    }
-
-    public String testMethodToMakeSonarFail(){
-     String tool = "testFailure";
      return tool;
     }
 
