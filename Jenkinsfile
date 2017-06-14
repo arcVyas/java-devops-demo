@@ -33,6 +33,7 @@ pipeline {
             def qg = waitForQualityGate()
             if (qg.status != 'OK') {
               error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              slackSend color: "danger", message: "Quality Gate Failed !!(<${env.BUILD_URL}|Open>)"
             }else{
               echo "Quality Gate status : ${qg.status}"
             }
