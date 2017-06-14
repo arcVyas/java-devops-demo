@@ -48,7 +48,7 @@ pipeline {
     }
     stage('Ask Approval') {
       steps {
-        slackSend 'Woohoo.. Ready for deployment '
+        slackSend color: "good", message:"Woohoo.. New build ready for deployment. Approve? (<${env.BUILD_URL}|Open>)"
         input(message: 'Can I deploy?', ok: 'Go Ahead', id: '_ready')
       }
     }
@@ -61,7 +61,7 @@ echo $PATH
 which ansible-playbook
 ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts
 '''
-        slackSend 'Successfully deployed new version of Demo App'
+        slackSend color: "good", message:"Successfully deployed new version of Demo App - (<http://ec2-13-58-208-59.us-east-2.compute.amazonaws.com:8080/java-devops-demo-app/jdops/tools"|Demo App>)""
       }
     }
   }
