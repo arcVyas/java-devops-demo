@@ -42,7 +42,7 @@ class JDopsController {
     @ApiOperation(value = "Get API version", response=String.class, responseContainer="String")
     @RequestMapping(value = "/version", produces = "application/json", method=RequestMethod.GET)
     public String getVersion() {
-      return "1.0";
+      return "1.2";
     }
 
     public String testMethod(){

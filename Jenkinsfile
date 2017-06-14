@@ -61,6 +61,7 @@ echo $PATH
 which ansible-playbook
 ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts
 '''
+        slackSend 'Successfully deployed new version of Demo App'
       }
     }
   }
