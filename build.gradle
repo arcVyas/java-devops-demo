@@ -60,8 +60,6 @@ publishing {
             from components.web
         }
     }
-}
-publishing {
     repositories {
         maven {
             credentials {
@@ -72,6 +70,8 @@ publishing {
         }
     }
 }
+
+tasks.release.finalizedBy tasks.publish
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
