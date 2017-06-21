@@ -8,6 +8,7 @@ buildscript {
 }
 plugins {
   id "org.sonarqube" version "2.4"
+  id 'net.researchgate.release' version '2.4.0'
 }
 
 apply plugin: 'groovy'
