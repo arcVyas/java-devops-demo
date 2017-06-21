@@ -74,6 +74,10 @@ publishing {
 nebulaRelease {
   //Set<String> releaseBranchPatterns = [/master/, /HEAD/, /(release(-|\/))?\d+(\.\d+)?\.x/, /v?\d+\.\d+\.\d+/] as Set
     Set<String> releaseBranchPatterns = [] as Set
+
+  Set<String> excludeBranchPatterns = [] as Set
+  String shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
+
 }
 
 tasks.release.finalizedBy tasks.publish
