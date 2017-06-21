@@ -71,6 +71,12 @@ publishing {
     }
 }
 
+nebulaRelease {
+
+  addReleaseBranchPattern("(bugfix.*)")
+
+}
+
 tasks.release.finalizedBy tasks.publish
 
 task wrapper(type: Wrapper) {
