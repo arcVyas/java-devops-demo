@@ -73,7 +73,7 @@ publishing {
 
 nebulaRelease {
 
-  addReleaseBranchPattern("/(bugfix(-.*))/")
+  addReleaseBranchPattern("/(bugfix(\/.*))/")
 
 }
 
