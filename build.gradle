@@ -50,14 +50,13 @@ jacocoTestReport {
 
 war {
     baseName = 'java-devops-demo'
-    version =  '1.0'
 }
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId 'devops-demo'
             artifactId 'java-devops-demo'
-            version '1.2'
+            version '$version'
             from components.web
         }
     }
