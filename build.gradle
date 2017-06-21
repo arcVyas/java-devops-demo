@@ -71,7 +71,7 @@ publishing {
     }
 }
 
-tasks.release.finalizedBy tasks.publish
+//tasks.release.finalizedBy tasks.publish
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
