@@ -56,12 +56,12 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''export ANSIBLE_HOME=/Users/vyas/workspace/tools/ansible
-cd $ANSIBLE_HOME
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.5/bin
-echo $PATH
-which ansible-playbook
-ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts
-'''
+              cd $ANSIBLE_HOME
+              export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.5/bin
+              echo $PATH
+              which ansible-playbook
+              ansible-playbook /Users/vyas/workspace/tools/ansible/tc.yml -i /Users/vyas/workspace/tools/ansible/hosts
+              '''
         slackSend color: "good", message: "Successfully deployed new version of Demo App - (<http://ec2-13-58-208-59.us-east-2.compute.amazonaws.com:8080/java-devops-demo-app/jdops/tools|Demo App>)"
       }
     }
