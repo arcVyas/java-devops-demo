@@ -8,3 +8,4 @@ This is a demo app for devops java tech stack
 - tb
 - built rocket
 - new release
+- trigger
