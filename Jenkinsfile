@@ -48,7 +48,7 @@ pipeline {
         sh './gradlew publish '
       }
     }
-    stage('Functional Test') {
+    stage('Test') {
       steps {
         parallel(
           "Functional Test": {
